@@ -1,0 +1,9 @@
+<div class="container">
+    <header class="header">
+        <app-navigation></app-navigation>
+        <div class="header__login">
+            <a class="link" [routerLink]="['/profile']">{{ name.firstName }} {{ name.lastName }}</a>
+            <button class="btn">Logout</button>
+        </div>
+    </header>
+</div>

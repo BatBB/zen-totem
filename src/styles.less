@@ -1,0 +1,40 @@
+@import 'variables.less';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  font-size: @baseFontSize;
+}
+
+body {
+  background-color: @backgroundColor;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.link {
+  color: @linkColor;
+
+  &__active {
+    border-bottom: 2px solid @linkColor;
+  }
+}
+
+.btn {
+  padding: 5px 10px;
+  color: @linkColor;
+  cursor: pointer;
+}

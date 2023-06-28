@@ -1,0 +1,7 @@
+<ul class="nav__list">
+    <li class="nav__item" appHoverNav *ngFor="let item of navItems">
+        <a class="nav__link link" [routerLink]="[item.link]" routerLinkActive="link__active">{{
+            item.title
+        }}</a>
+    </li>
+</ul>
