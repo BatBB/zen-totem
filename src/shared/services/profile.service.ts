@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
 
-Injectable()
+Injectable();
 export class ProfileService {
-    public get profile$() { return of({}); }
+    public get profile$() {
+        return of({});
+    }
 }

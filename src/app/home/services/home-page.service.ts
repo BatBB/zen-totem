@@ -1,6 +1,4 @@
 import { Injectable } from '@angular/core';
 
-Injectable()
-export class HomePageService{
-
-}
+Injectable();
+export class HomePageService {}
