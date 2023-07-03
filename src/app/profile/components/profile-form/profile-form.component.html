@@ -1,0 +1,84 @@
+<form class="profile-form" [formGroup]="profileForm" (submit)="saveProfile()">
+    <h2 class="profile-form__title">Edit profile</h2>
+
+    <div class="profile-form__group">
+        <label for="email">Email</label>
+        <input
+            class="profile-form__input"
+            id="email"
+            type="email"
+            readonly
+            formControlName="email"
+        />
+    </div>
+
+    <div class="profile-form__group">
+        <label for="firstName">First name</label>
+        <input class="profile-form__input" id="firstName" type="text" formControlName="firstName" />
+        <div *ngIf="firstName?.invalid && firstName?.touched" class="profile-form__error">
+            <div *ngIf="firstName?.errors?.['required']" class="profile-form__error-msg">
+                First name is required.
+            </div>
+            <div *ngIf="firstName?.errors?.['maxlength']" class="profile-form__error-msg">
+                First name cannot exceed 255 characters
+            </div>
+        </div>
+    </div>
+
+    <div class="profile-form__group">
+        <label for="lastName">Last name</label>
+        <input class="profile-form__input" id="lastName" type="text" formControlName="lastName" />
+
+        <div *ngIf="lastName?.invalid && lastName?.touched" class="profile-form__error">
+            <div *ngIf="lastName?.errors?.['required']" class="profile-form__error-msg">
+                Last name is required.
+            </div>
+            <div *ngIf="lastName?.errors?.['maxlength']" class="profile-form__error-msg">
+                Last name cannot exceed 255 characters
+            </div>
+        </div>
+    </div>
+
+    <div class="profile-form__group">
+        <label for="phone">Phone</label>
+        <div class="phone">
+            <span class="phone__prefix">+7</span>
+            <input
+                class="profile-form__input phone__input"
+                id="phone"
+                type="tel"
+                formControlName="phone"
+            />
+        </div>
+
+        <div *ngIf="phone?.invalid && phone?.touched" class="profile-form__error">
+            <div *ngIf="phone?.errors?.['required']" class="profile-form__error-msg">
+                Phone is required.
+            </div>
+            <div
+                *ngIf="phone?.errors?.['maxlength'] || phone?.errors?.['minlength']"
+                class="profile-form__error-msg"
+            >
+                Phone must contain 10 digit
+            </div>
+        </div>
+    </div>
+
+    <div class="profile-form__group">
+        <label for="website">Website</label>
+        <input class="profile-form__input" id="website" type="text" formControlName="website" />
+
+        <div *ngIf="website?.invalid && website?.touched" class="profile-form__error">
+            <div *ngIf="website?.errors?.['required']" class="profile-form__error-msg">
+                Website is required.
+            </div>
+            <div *ngIf="website?.errors?.['pattern']" class="profile-form__error-msg">
+                Input correct website link.
+            </div>
+        </div>
+    </div>
+
+    <button class="btn profile-form__btn" type="submit" [disabled]="profileForm.invalid">
+        Save
+    </button>
+</form>

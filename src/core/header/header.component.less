@@ -1,14 +1,34 @@
-.header {
-  height: 60px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+@import "../../variables.less";
 
-  &__login {
+
+.header {
+    height: 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 10px;
-  }
-}
 
+    &__success {
+        width: 140px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: @successColor;
+        padding: 5px;
+        border-radius: 5px;
+
+        &-error {
+            background-color: @errorColor;
+        }
+
+        &-close {
+            cursor: pointer;
+        }
+    }
+
+    &__login {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+    }
+}

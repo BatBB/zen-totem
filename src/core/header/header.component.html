@@ -1,8 +1,20 @@
 <div class="container">
     <header class="header">
         <app-navigation></app-navigation>
+        <div
+            class="header__success"
+            *ngIf="successStatus !== null"
+            [ngClass]="{ 'header__success-error': !successStatus }"
+        >
+            {{ successStatus ? successMessage : errorMessage }}
+            <button class="header__success-close" *ngIf="!successStatus" (click)="closeStatus()">
+                &#x2715;
+            </button>
+        </div>
         <div class="header__login">
-            <a class="link" [routerLink]="['/profile']">{{ name.firstName }} {{ name.lastName }}</a>
+            <a class="link" [routerLink]="['/profile']"
+                >{{ profile.firstName }} {{ profile.lastName }}</a
+            >
             <button class="btn">Logout</button>
         </div>
     </header>
