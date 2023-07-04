@@ -1,0 +1,23 @@
+<form class="login-form" [formGroup]="loginForm" (submit)="login()">
+    <div class="login-form__group">
+        <label for="login">Login:</label>
+        <input
+            class="login-form__input"
+            type="text"
+            id="login"
+            placeholder="'login'"
+            formControlName="login"
+        />
+    </div>
+    <div class="login-form__group">
+        <label for="password">Password:</label>
+        <input
+            class="login-form__input"
+            type="password"
+            id="password"
+            placeholder="'password'"
+            formControlName="password"
+        />
+    </div>
+    <button class="btn">Login</button>
+</form>

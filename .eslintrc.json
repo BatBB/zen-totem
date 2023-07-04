@@ -45,7 +45,8 @@
         "class-methods-use-this": "off",
         "no-useless-constructor": "off",
         "no-empty-function": "off",
-        "no-unused-vars": "off"
+        "no-unused-vars": "off",
+        "no-undef": "off"
       }
     },
     {

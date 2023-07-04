@@ -1,5 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Profile } from 'app/profile/models/profile';
+import { AuthService } from 'core/services';
 import { ApiService } from 'core/services/api.service';
 import { Observable, Subscription, timer } from 'rxjs';
 
@@ -19,7 +21,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
     private subscriptionTimer: Subscription | null = null;
 
-    constructor(private apiService: ApiService) {}
+    constructor(
+        private apiService: ApiService,
+        private authService: AuthService,
+        private router: Router
+    ) {}
 
     ngOnInit(): void {
         this.apiService.getProfile$.subscribe((profile) => {
@@ -39,6 +45,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
     public closeStatus() {
         this.successStatus = null;
+    }
+
+    public logout() {
+        this.authService.logout();
+        this.router.navigate(['login']);
     }
 
     ngOnDestroy(): void {

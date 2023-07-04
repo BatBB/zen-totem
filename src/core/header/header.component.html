@@ -15,7 +15,7 @@
             <a class="link" [routerLink]="['/profile']"
                 >{{ profile.firstName }} {{ profile.lastName }}</a
             >
-            <button class="btn">Logout</button>
+            <button class="btn" (click)="logout()">Logout</button>
         </div>
     </header>
 </div>
